@@ -13,7 +13,7 @@ port = 55555
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 
-def init_connection():
+def initialize_connection():
     while True:
         try:
             s.connect((ipv4, port))
@@ -23,7 +23,7 @@ def init_connection():
             time.sleep(1)
 
 
-init_connection()
+initialize_connection()
 
 print("connected to the server as %s:%s" % (s.getsockname()[0], s.getsockname()[1]))
 print("to quit please type \"quit\" or \"exit\"")
