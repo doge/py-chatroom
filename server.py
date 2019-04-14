@@ -5,14 +5,12 @@
 
 '''
 
-import socket, datetime
+import socket, datetime, config
 from _thread import *
 
-ipv4 = "0.0.0.0"
-port = 55555
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.bind((ipv4, port))
+s.bind((config.ipv4, config.port))
 s.listen(5)
 
 users = []
@@ -39,7 +37,7 @@ def client_thread(conn, addr):
 
 def main():
     prefix()
-    print("server listening on port: %s" % port)
+    print("server listening on port: %s" % config.port)
 
     while True:
         conn, addr = s.accept()

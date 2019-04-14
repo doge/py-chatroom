@@ -5,10 +5,8 @@
 
 '''
 
-import socket, time
+import socket, time, config
 
-ipv4 = "0.0.0.0"
-port = 55555
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -16,10 +14,10 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 def initialize_connection():
     while True:
         try:
-            s.connect((ipv4, port))
+            s.connect((config.ipv4, config.port))
             break
         except:
-            print("attempting to connect to %s:%s" % (ipv4, port))
+            print("attempting to connect to %s:%s" % (config.ipv4, config.port))
             time.sleep(1)
 
 

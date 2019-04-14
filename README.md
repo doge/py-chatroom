@@ -9,7 +9,7 @@ you don't see the messages sent from clients come up in real time on the client 
 
 ## setup
 
-go into client.py and server.py and change
+open config.py and change
 ```py
 ipv4 = "0.0.0.0"
 port = 55555
